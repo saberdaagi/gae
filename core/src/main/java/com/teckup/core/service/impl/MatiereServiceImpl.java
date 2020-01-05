@@ -1,4 +1,18 @@
 package com.teckup.core.service.impl;
 
-public class MatiereServiceImpl {
+import com.teckup.core.repository.MatiereRepository;
+import com.teckup.core.service.MatiereService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("matiereService")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class MatiereServiceImpl implements MatiereService {
+
+
+   final MatiereRepository matiereRepository ;
+
+
+
 }

@@ -17,13 +17,8 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.teckup.core</groupId>
-            <artifactId>core</artifactId>
-            <version>${revision}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.teckup.security</groupId>
-            <artifactId>security</artifactId>
+            <groupId>com.teckup.api</groupId>
+            <artifactId>api</artifactId>
             <version>${revision}</version>
         </dependency>
 
