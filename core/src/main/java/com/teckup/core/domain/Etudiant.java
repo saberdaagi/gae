@@ -7,7 +7,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,32 +15,29 @@ import java.util.Set;
 @Table(schema = "gae")
 @Data
 @NoArgsConstructor
-public class Matiere extends AuditModel {
+public class Etudiant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL)
+    private User user;
 
+    @OneToMany(mappedBy="etudiant", cascade=CascadeType.ALL)
+    private Set<Matiere> matieres = new HashSet<>();
 
-    @Column
-    String label ;
-
-
-    @Column
-    Long nbrHeures;
-
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "etudiant_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    Etudiant etudiant ;
+    @OneToMany(mappedBy="etudiant", cascade=CascadeType.ALL)
+    private Set<Absence> absences = new HashSet<>();
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "absence_id")
+    @JoinColumn(name = "classe_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    Absence absence ;
+    Classe classe ;
+
+
+
 }

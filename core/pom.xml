@@ -6,17 +6,11 @@
         <groupId>com.teck.up.gae</groupId>
         <artifactId>gae</artifactId>
         <version>${revision}</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.teckup.core</groupId>
     <artifactId>core</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <version>${revision}</version>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
         <!-- ======================= Spring Framework ====================== -->
@@ -35,6 +29,11 @@
             <artifactId>postgresql</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.teckup.common</groupId>
+            <artifactId>common</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
 
