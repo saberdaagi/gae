@@ -1,7 +1,9 @@
 package com.teckup.core.domain;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -12,6 +14,8 @@ import java.util.Set;
 @Table(schema = "gae")
 @Data
 @NoArgsConstructor
+@Getter
+@Setter
 public class Classe extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

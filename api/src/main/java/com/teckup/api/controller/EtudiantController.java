@@ -1,6 +1,7 @@
 package com.teckup.api.controller;
 
 import com.teckup.core.domain.Etudiant;
+import com.teckup.core.dto.EtudiantDto;
 import com.teckup.core.service.EtudiantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +29,9 @@ public class EtudiantController {
     }
 
     @PostMapping
-    public Etudiant save(@RequestParam String matricule,
-                         @RequestParam String nom,
-                         @RequestParam String prenom,
-                         @RequestParam String email,
-                         @RequestParam String dateNaissance,
-                         @RequestParam Long classeId){
+    public Etudiant save(@RequestBody EtudiantDto etudiantDto){
 
-        return etudiantService.save(matricule,nom,prenom,email,dateNaissance,classeId);
+        return etudiantService.save(etudiantDto);
 
 
     }
