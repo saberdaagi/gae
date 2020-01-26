@@ -1,19 +1,15 @@
 package com.teckup.core.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Set;
 
 
 @Entity
-@Table(schema = "gae")
+@Table
 @Data
 @NoArgsConstructor
 public class Matiere extends AuditModel {
@@ -32,16 +28,10 @@ public class Matiere extends AuditModel {
     Long nbrHeures;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "etudiant_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    Etudiant etudiant ;
+    @OneToMany(mappedBy = "matiere", cascade = CascadeType.ALL)
+    private Set<Absence> absences = new HashSet<>();
 
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "absence_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    Absence absence ;
+    @ManyToOne
+    @JoinColumn
+    private Classe classe;
 }

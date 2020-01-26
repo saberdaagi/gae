@@ -11,7 +11,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(schema = "gae")
+@Table
 @Data
 @NoArgsConstructor
 @Getter
@@ -21,15 +21,21 @@ public class Classe extends AuditModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-
-
     @Column
     String label;
-
 
     @Column
     String nomComplet ;
 
-    @OneToMany(mappedBy="classe", cascade=CascadeType.ALL)
-    private Set<Etudiant> users = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL)
+    private Set<User> users = new HashSet<>();
+
+    @OneToMany(cascade=CascadeType.ALL)
+    private Set<Matiere> matiere = new HashSet<>();
+
+    public Classe(String label , String nomComplet){
+        super();
+        this.label = label;
+        this.nomComplet = nomComplet;
+    }
 }

@@ -25,7 +25,11 @@
             <artifactId>security</artifactId>
             <version>${revision}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.teckup.task.scheduler</groupId>
+            <artifactId>task-scheduler</artifactId>
+            <version>${revision}</version>
+        </dependency>
 
     </dependencies>
 

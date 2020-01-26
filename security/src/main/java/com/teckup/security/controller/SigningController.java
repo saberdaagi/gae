@@ -1,6 +1,7 @@
 package com.teckup.security.controller;
 
 import com.teckup.core.constants.Role;
+import com.teckup.core.domain.Classe;
 import com.teckup.security.dto.UserSigninDTO;
 import com.teckup.core.domain.User;
 import com.teckup.security.service.UserService;
@@ -18,6 +19,7 @@ import javax.annotation.PostConstruct;
 public class SigningController {
 
     final UserService userService;
+
 
     @PostConstruct
     public void init() {

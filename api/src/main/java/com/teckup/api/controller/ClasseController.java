@@ -25,12 +25,8 @@ public class ClasseController {
 
     @PostMapping
     @ResponseStatus(OK)
-    public Classe save(@Valid @RequestBody ClasseDto classeDto){
-        Classe classe = new Classe();
-        classe.setLabel(classeDto.getLabel());
-        classe.setNomComplet(classeDto.getNomComplet());
-classe.setCreatedAt(new Date());
-classe.setUpdatedAt(new Date());
+    public Classe save(@Valid @RequestBody ClasseDto classe){
+
         return classeService.save(classe);
     }
 

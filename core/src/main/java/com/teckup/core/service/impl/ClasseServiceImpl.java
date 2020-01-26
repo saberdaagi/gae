@@ -1,6 +1,7 @@
 package com.teckup.core.service.impl;
 
 import com.teckup.core.domain.Classe;
+import com.teckup.core.dto.ClasseDto;
 import com.teckup.core.repository.ClasseRepository;
 import com.teckup.core.service.ClasseService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,11 @@ public class ClasseServiceImpl implements ClasseService {
     }
 
     @Override
-    public Classe save(Classe classe) {
+    public Classe save(ClasseDto classeDto) {
+        Classe classe = new Classe(classeDto.getLabel(),classeDto.getNomComplet());
         return classeRepository.save(classe);
     }
+
+
+
 }

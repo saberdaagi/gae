@@ -1,6 +1,7 @@
 package com.teckup.security.service.impl;
 
 import com.teckup.common.mapping.service.ModelMapperService;
+import com.teckup.core.domain.Classe;
 import com.teckup.core.domain.User;
 import com.teckup.security.repository.UserRepository;
 import com.teckup.security.service.UserService;

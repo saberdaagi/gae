@@ -1,34 +1,64 @@
 package com.teckup.core.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
-@Table(schema = "gae")
+@Table
 @Data
 @NoArgsConstructor
+@Getter
+@Setter
+@IdClass(Absence.AssignedAbsence.class)
 public class Absence extends AuditModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    @ManyToOne
+    @JoinColumn
+    private Matiere matiere;
 
+    @Id
+    @ManyToOne
+    @JoinColumn
+    private User user;
+    public static class AssignedAbsence implements Serializable {
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "etudiant_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    Etudiant etudiant ;
+        private User user;
+        private Matiere matiere;
 
-    @OneToMany(mappedBy="absence", cascade=CascadeType.ALL)
-    private Set<Matiere> matieres = new HashSet<>();
+        public AssignedAbsence() {}
+
+        public AssignedAbsence(User user, Matiere matiere) {
+            this.user = user;
+            this.matiere = matiere;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof Absence)) {
+                return false;
+            }
+            Absence absence = (Absence) o;
+            return Objects.equals(user, absence.getUser()) &&
+                    Objects.equals(matiere, absence.getMatiere());
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(user, matiere);
+        }
+    }
+
 
 }

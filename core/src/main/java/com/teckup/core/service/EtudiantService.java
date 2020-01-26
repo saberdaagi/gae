@@ -1,15 +1,16 @@
 package com.teckup.core.service;
 
-import com.teckup.core.domain.Etudiant;
+import com.teckup.core.domain.User;
 import com.teckup.core.dto.EtudiantDto;
 
+import java.text.ParseException;
 import java.util.List;
 
 public interface EtudiantService {
 
-    List<Etudiant> getAll();
+    List<User> getAll();
 
-    Etudiant getEtudiant(String matricule);
+    User getEtudiant(String matricule);
     
-    Etudiant save(EtudiantDto etudiantDto);
+    User save(EtudiantDto etudiantDto) throws ParseException;
 }

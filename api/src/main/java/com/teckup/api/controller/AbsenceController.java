@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api/absence")
@@ -19,7 +21,7 @@ public class AbsenceController {
 
 
     @PostMapping
-    public Absence save(@RequestBody AbsenceDto absence){
+    public Absence save( @Valid @RequestBody AbsenceDto absence){
 
        return  absenceService.save(absence);
     }

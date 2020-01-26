@@ -1,9 +1,9 @@
 package com.teckup.core.repository;
 
-import com.teckup.core.domain.Etudiant;
+import com.teckup.core.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
+public interface EtudiantRepository extends JpaRepository<User,Long> {
 
-    Etudiant findByMatricule(String matricule);
+    User findByMatricule(String matricule);
 }
