@@ -8,9 +8,13 @@ import java.util.List;
 
 public interface EtudiantService {
 
-    List<User> getAll();
+    List<EtudiantDto> getAll();
 
     User getEtudiant(String matricule);
     
     User save(EtudiantDto etudiantDto) throws ParseException;
+
+    User update(EtudiantDto etudiantDto)  ;
+
+    void delete(Long id);
 }

@@ -47,24 +47,26 @@ public class User {
     @Column(unique = true)
     String matricule;
 
-    @Column
-    String nom;
+    @Column(name = "firstname")
+    String firstName;
 
-    @Column
-    String prenom;
+    @Column(name = "lastname")
+    String lastName;
 
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     Date dateNaissance;
 
+    @Column
+    String gender ;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "classe_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     Classe classe ;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Absence> absences = new HashSet<>();
 
     public User(){

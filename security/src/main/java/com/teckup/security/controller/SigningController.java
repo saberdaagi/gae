@@ -23,12 +23,13 @@ public class SigningController {
 
     @PostConstruct
     public void init() {
+        if (!userService.existsByUsername("admin")){
         userService.save(new User(
             "admin",
             "admin@gmail.com",
             "admin",
             Role.ADMIN
-        ));
+        ));}
     }
 
     @PostMapping("/signup")
@@ -40,8 +41,8 @@ public class SigningController {
     }
 
     @GetMapping("/signin")
-    public ResponseEntity<UserSigninDTO> signin(@RequestParam String username) {
-        return ResponseEntity.ok(new UserSigninDTO(userService.existsByUsername(username)));
+    public ResponseEntity<UserSigninDTO> signin(@RequestParam(required=false,name="email") String email) {
+        return ResponseEntity.ok(new UserSigninDTO(userService.existsByEmail(email)));
     }
 
 }
