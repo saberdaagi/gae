@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.OK;
 
-@CrossOrigin("*")
+
 @RestController
-@RequestMapping("/api/v1/classe")
+@RequestMapping("/api/classe")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ClasseController {
 
@@ -26,8 +27,13 @@ public class ClasseController {
     @PostMapping
     @ResponseStatus(OK)
     public Classe save(@Valid @RequestBody ClasseDto classe){
-
         return classeService.save(classe);
+    }
+
+    @GetMapping
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<Classe> getAll(){
+        return classeService.getAll();
     }
 
 

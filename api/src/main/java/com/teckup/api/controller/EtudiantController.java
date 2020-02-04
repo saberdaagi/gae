@@ -28,7 +28,7 @@ public class EtudiantController {
 
     @PostMapping("/update")
     @CrossOrigin(origins = "http://localhost:4200")
-    public User update(@RequestBody EtudiantDto etudiantDto)  {
+    public User update(@RequestBody EtudiantDto etudiantDto) throws ParseException{
         return etudiantService.update(etudiantDto);
     }
 
