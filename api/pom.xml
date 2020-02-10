@@ -7,7 +7,7 @@
         <artifactId>gae</artifactId>
         <version>${revision}</version>
     </parent>
-    <groupId>com.teckup.api</groupId>
+    <groupId>com.isp.api</groupId>
     <artifactId>api</artifactId>
     <version>${revision}</version>
     <name>api</name>
@@ -16,17 +16,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.teckup.core</groupId>
+            <groupId>com.isp.core</groupId>
             <artifactId>core</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>
-            <groupId>com.teckup.security</groupId>
+            <groupId>com.isp.security</groupId>
             <artifactId>security</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>
-            <groupId>com.teckup.task.scheduler</groupId>
+            <groupId>com.isp.task.scheduler</groupId>
             <artifactId>task-scheduler</artifactId>
             <version>${revision}</version>
         </dependency>

@@ -17,7 +17,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.teckup.api</groupId>
+            <groupId>com.isp.api</groupId>
             <artifactId>api</artifactId>
             <version>${revision}</version>
         </dependency>

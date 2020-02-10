@@ -1,16 +1,15 @@
-package com.teckup.api.controller;
+package com.isp.api.controller;
 
 
-import com.teckup.core.domain.Classe;
-import com.teckup.core.dto.ClasseDto;
-import com.teckup.core.service.ClasseService;
+import com.isp.core.domain.Classe;
+import com.isp.core.dto.ClasseDto;
+import com.isp.core.service.ClasseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-import java.util.Date;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.OK;

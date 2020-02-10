@@ -7,7 +7,7 @@
         <artifactId>gae</artifactId>
         <version>${revision}</version>
     </parent>
-    <groupId>com.teckup.core</groupId>
+    <groupId>com.isp.core</groupId>
     <artifactId>core</artifactId>
     <version>${revision}</version>
 
@@ -30,7 +30,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.teckup.common</groupId>
+            <groupId>com.isp.common</groupId>
             <artifactId>common</artifactId>
             <version>${revision}</version>
         </dependency>

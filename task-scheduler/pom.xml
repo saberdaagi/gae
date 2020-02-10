@@ -10,7 +10,7 @@
     </parent>
 
 
-    <groupId>com.teckup.task.scheduler</groupId>
+    <groupId>com.isp.task.scheduler</groupId>
     <artifactId>task-scheduler</artifactId>
     <version>${revision}</version>
     <properties>
@@ -36,7 +36,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.teckup.core</groupId>
+            <groupId>com.isp.core</groupId>
             <artifactId>core</artifactId>
             <version>${revision}</version>
         </dependency>

@@ -1,4 +1,4 @@
-package com.teckup.api.exception;
+package com.isp.api.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

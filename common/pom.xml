@@ -9,7 +9,7 @@
     </parent>
 
 
-    <groupId>com.teckup.common</groupId>
+    <groupId>com.isp.common</groupId>
     <artifactId>common</artifactId>
     <version>${revision}</version>
     <name>common</name>

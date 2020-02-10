@@ -1,12 +1,10 @@
-package com.teckup.api.controller;
+package com.isp.api.controller;
 
-import com.teckup.core.domain.User;
-import com.teckup.core.dto.EtudiantDto;
-import com.teckup.core.service.EtudiantService;
+import com.isp.core.domain.User;
+import com.isp.core.dto.EtudiantDto;
+import com.isp.core.service.EtudiantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
