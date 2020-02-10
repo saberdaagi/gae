@@ -76,7 +76,7 @@ public class EtudiantServiceImpl implements EtudiantService {
     }
 
     @Override
-    public User update(EtudiantDto etudiantDto)  {
+    public User update(EtudiantDto etudiantDto) throws ParseException {
         User etudiant = etudiantRepository.findByMatricule(etudiantDto.getMatricule());
         Optional<Classe> classeOptional = classeService.getClasse(Long.valueOf(etudiantDto.getClasseId()));
         if (!classeOptional.isPresent()) {
@@ -84,6 +84,7 @@ public class EtudiantServiceImpl implements EtudiantService {
         }
         Classe classeItem = classeOptional.get();
         etudiant.setGender(etudiantDto.getGender());
+        etudiant.setDateNaissance(DateHelper.parseToDate(etudiantDto.getDateNaissance()));
         etudiant.setEmail(etudiant.getEmail());
         etudiant.setClasse(classeItem);
         etudiant.setLastName(etudiantDto.getLastName());

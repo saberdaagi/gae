@@ -14,7 +14,7 @@ public interface EtudiantService {
     
     User save(EtudiantDto etudiantDto) throws ParseException;
 
-    User update(EtudiantDto etudiantDto)  ;
+    User update(EtudiantDto etudiantDto)  throws ParseException;
 
     void delete(Long id);
 }

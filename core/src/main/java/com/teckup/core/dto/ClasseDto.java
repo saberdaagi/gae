@@ -14,4 +14,8 @@ public class ClasseDto {
 
     String nomComplet ;
 
+    public ClasseDto(String label, String nomComplet) {
+        this.label = label;
+        this.nomComplet = nomComplet;
+    }
 }

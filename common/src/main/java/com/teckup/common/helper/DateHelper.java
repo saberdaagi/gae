@@ -11,7 +11,7 @@ public class DateHelper {
 
 
 
-    public static final  String DATE_FORMATTER = "dd/MM/yyyy";
+    public static final  String DATE_FORMATTER = "MM/MM/yyyy";
 
     public static Date parseToDate(String dateStr) throws ParseException {
         Date date = new SimpleDateFormat(DATE_FORMATTER).parse(dateStr);

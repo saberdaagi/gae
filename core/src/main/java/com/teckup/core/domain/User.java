@@ -54,7 +54,7 @@ public class User {
     String lastName;
 
     @Column
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     Date dateNaissance;
 
     @Column
@@ -65,9 +65,6 @@ public class User {
     @OnDelete(action = OnDeleteAction.CASCADE)
     Classe classe ;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private Set<Absence> absences = new HashSet<>();
 
     public User(){
         super();

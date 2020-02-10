@@ -1,4 +1,4 @@
-truncate  qrtz_blob_triggers cascade ;
+/*truncate  qrtz_blob_triggers cascade ;
 truncate qrtz_calendars cascade ;
 truncate qrtz_cron_triggers cascade ;
 truncate qrtz_fired_triggers cascade ;
@@ -8,7 +8,7 @@ truncate qrtz_paused_trigger_grps cascade ;
     truncate qrtz_simple_triggers cascade ;
         truncate qrtz_simprop_triggers cascade ;
             truncate qrtz_simprop_triggers cascade ;
-                truncate qrtz_triggers cascade ;
+                truncate qrtz_triggers cascade ;*/
 CREATE TABLE qrtz_blob_triggers (
                                     trigger_name character varying(80) NOT NULL,
                                     trigger_group character varying(80) NOT NULL,

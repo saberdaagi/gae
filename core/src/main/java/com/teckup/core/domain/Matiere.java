@@ -28,9 +28,6 @@ public class Matiere extends AuditModel {
     Long nbrHeures;
 
 
-    @OneToMany(mappedBy = "matiere", cascade = CascadeType.ALL)
-    private Set<Absence> absences = new HashSet<>();
-
     @ManyToOne
     @JoinColumn
     private Classe classe;
